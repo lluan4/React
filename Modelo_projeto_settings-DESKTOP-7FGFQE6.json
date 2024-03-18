@@ -1,0 +1,28 @@
+{
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.tabs.enabled": true,
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "onFocusChange",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[php]": {
+        "editor.defaultFormatter": "vscode.configuration-editing"
+    },
+    "editor.wordWrap": "on",
+    "liveServer.settings.donotVerifyTags": true,
+    "explorer.confirmDelete": false,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.minimap.autohide": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.fixAll.eslint": "always"
+    },
+    "eslint.format.enable": true
+}

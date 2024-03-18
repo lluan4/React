@@ -1,0 +1,216 @@
+.main {
+  background: #fff;
+  padding: 30px;
+  margin:50px auto;
+  max-width: 500px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input[type="text"] {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  min-width: 80%;
+  padding-left: 5px;
+}
+
+.form button[type="submit"] {
+  border: none;
+  height: 40px;
+  width: 40px;
+  background: #f04c64;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul{
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  min-width: 80%;
+  padding: 0 20px;
+}
+
+li{
+  display: flex;
+  margin-top: 5px;
+  padding: 0 5px;
+  justify-content: space-between;
+  height: 28px;
+  font-size: 25px;
+}
+
+.btn-container {
+  display: inline-flex;
+}
+
+button.btn-del-task {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 28px;
+  height: 100%;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  justify-content: space-between;
+  background: #f04c64;
+  color: #fff;
+  border: none;
+  margin-left: 5px;
+}
+
+button.btn-del-task > div:first-child {
+  display: none;
+  transition-timing-function: ease;
+  transition: all 0.5s ease-out;
+  color: #fff;
+}
+
+button.btn-del-task > div:nth-child(2) {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0s ease-out;
+  color: #fff;
+}
+
+
+button.btn-del-task:hover {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  height: 100%;
+}
+
+button.btn-del-task:hover > div:first-child{
+  display: flex;
+  position: relative;
+  left: 5px;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  font-weight: 100;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+button.btn-del-task:hover > div:nth-child(2) {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 24px;
+  padding-left: 0 5px;
+  border-left: 1px solid;
+  border-image:
+    linear-gradient(
+      to bottom,
+      white,
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+
+button.btn-update-task {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 28px;
+  height: 100%;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  justify-content: space-between;
+  background: #5282b3;
+  color: #fff;
+  border: none;
+  margin-left: 5px;
+}
+
+button.btn-update-task > div:first-child {
+  display: none;
+  transition-timing-function: ease;
+  transition: all 0.5s ease-out;
+  color: #fff;
+}
+
+button.btn-update-task > div:nth-child(2) {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0s ease-out;
+  color: #fff;
+}
+
+
+button.btn-update-task:hover {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 100%;
+}
+
+button.btn-update-task:hover > div:first-child{
+  display: flex;
+  position: relative;
+  left: 5px;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  font-weight: 100;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+button.btn-update-task:hover > div:nth-child(2) {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 24px;
+  padding-left: 0 5px;
+  border-left: 1px solid;
+  border-image:
+    linear-gradient(
+      to bottom,
+      white,
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+
+.form button:hover{
+background-color: #A33445;
+color: wheat;
+
+}

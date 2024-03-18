@@ -1,0 +1,49 @@
+** Comandos importates **
+
+- Iniciar um projeto React:
+    npx create-react-app@latest .
+    link: https://react.dev/learn/start-a-new-react-project
+
+- Aplicações de desenvolvimento
+    npm i eslint babel-eslint --save-dev
+
+- Configurar eslint
+    npx eslint --init
+
+- Adicionar icones
+  npm i react-icons
+  
+- Adicionar no arquivo gerado depois de Configurar o .eslintrc.js
+
+    Acima do parserOptions insira:
+    parser: 'babel-eslint'
+
+    Adicione nos rules:
+    rules: "react/jsx-filename-extension" : 0
+
+** Package.json **
+
+Consultar comandos no "scripts"
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
+** Na pasta src **
+
+Manter os arquivos:
+- App.css
+- App.json
+- index.js
+
+** Na pasta public **
+
+Manter os arquivos:
+- index.html
+
+** Plugins **
+
+editorconfig
+eslint

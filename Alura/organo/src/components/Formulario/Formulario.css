@@ -1,0 +1,27 @@
+section{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-section {
+  background: #F7F7F7;
+  width: 80%;
+  max-width: 1121px;
+  margin-top: 80px;
+  padding-left: 96px;
+  padding-right: 95px;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.form-section h2 {
+  font-family: "Prata", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 43px;
+  display: flex;
+  align-items: center;
+  color: #212121;
+}
