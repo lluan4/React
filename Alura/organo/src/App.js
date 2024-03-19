@@ -1,11 +1,13 @@
-import Banner from './components/Banner/';
-import Formulario from './components/Formulario';
+import Banner from "./components/Banner/";
+import Form from "./components/Form";
+import Button from "react-bootstrap/Button";
 
 function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario />
+      <Form />
+      <Button variant="primary">Primary</Button>{" "}
     </div>
   );
 }

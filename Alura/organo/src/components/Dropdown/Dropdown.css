@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .dropdown-list {
+    margin-bottom: 40px 0;
+  }
+  
+  .dropdown-list label {
+    display: block;
+    font-family: "Montserrat";
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .dropdown-list select {
+    background: #fff;
+    height: 9vh;
+    margin-bottom: 29px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    border: none;
+    padding: 30px 0px;
+    padding-left: 21px;
+    mix-blend-mode: normal;
+  
+    /* Place Holder */
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+  }
+  
