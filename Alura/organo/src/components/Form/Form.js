@@ -1,93 +1,69 @@
-import "./Form.css";
-import TextField from "../TextField";
-import Dropdown from "../Dropdown";
-import Button from "../Button";
-import { useState } from "react";
+import './Form.css';
+import TextField from '../TextField';
+import Dropdown from '../Dropdown';
+import Button from '../Button';
+import { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import { getTeams } from '../../Lib/utils';
 
 const teamsOptions = [
-  "Escolha o Time",
-  "Programação",
-  "Fron-End",
-  "Data Science",
-  "Devops",
-  "UX e Design",
-  "Mobile",
+  'Escolha o Time',
+  'Programação',
+  'Fron-End',
+  'Data Science',
+  'Devops',
+  'UX e Design',
+  'Mobile',
 ];
 
-function getTeams() {
-  const teamsRepository = {
-    teams: [],
-  };
-  teamsOptions.forEach((team, index) => {
-    team === "Escolha o Time"
-      ? teamsRepository.teams.push({ id: index, value: "", team })
-      : teamsRepository.teams.push({ id: index, value: team, team });
-  });
-
-  return teamsRepository;
-}
-
-const isValid = (value) => {
-  const validations = {
-    isEmpty: isEmpty({ value }),
-    hasNumber: hasNumber({ value }),
-  };
-  const result = validations.isEmpty && validations.hasNumber;
-  return result;
-};
-
-const isEmpty = ({ value }) => value.trim() !== "";
-const hasNumber = ({ value }) => !/\d/g.test(value.trim());
-
-export const Form = () => {
+export const FormIndex = () => {
   const times = [];
 
-  const [nome, setNome] = useState("");
-  const [validName, setValidNome] = useState(isValid(nome));
-  const [cargo, setCargo] = useState("");
-  const [validRole, setValidRole] = useState(isValid(cargo));
-  const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("");
-  const [validTime, setValidTime] = useState(isValid(time));
-  const [count, setCount] = useState(false);
+  const [nome, setNome] = useState('');
+  const [role, setRole] = useState('');
+  const [image, setImage] = useState('');
+  const [team, setTeam] = useState('');
 
   const submitHandle = (e) => {
     e.preventDefault();
-    setCount(true);
-    console.log(validName);
+    const inputs = e.currentTarget.querySelectorAll('input, select');
+    for (const keys in inputs) {
+      console.log(inputs[keys].value, inputs[keys].name);
+    }
   };
 
   return (
     <section>
-      <form onSubmit={submitHandle} className="form-section">
-        <h2>Preencha os dados para criar o card do colaborador.</h2>
-        <TextField
-          label="Nome"
-          valor={nome}
-          validName={(valor) => setValidNome(valor)}
-          inputChanged={(valor) => setNome(valor)}
-          className={!validName && count ? "is-invalid" : "is-valid"}
-        />
-        <TextField
-          label="Cargo"
-          valor={cargo}
-          validRole={(valor) => setValidRole(valor)}
-          inputChanged={(valor) => setCargo(valor)}
-        />
-        <TextField
-          label="Imagem"
-          valor={imagem}
-          inputChanged={(valor) => setImagem(valor)}
-        />
-        <Dropdown
-          itens={getTeams()}
-          label="Time"
-          valor={time}
-          validTime={(valor) => setTime(valor)}
-          inputChanged={(valor) => setValidTime(valor)}
-        />
-        <Button>Criar Card</Button>
-      </form>
+      <div className="form-section">
+        <Form onSubmit={submitHandle}>
+          <h2>Preencha os dados para criar o card do colaborador.</h2>
+          <TextField
+            label="nome"
+            inputChanged={(e) => setNome(e)}
+            value={nome}
+            validation
+          />
+          <TextField
+            label="cargo"
+            inputChanged={(e) => setRole(e)}
+            value={role}
+            validation
+          />
+          <TextField
+            label="imagem"
+            inputChanged={(e) => setImage(e)}
+            value={image}
+          />
+          <Dropdown
+            itens={getTeams(teamsOptions)}
+            label="time"
+            inputChanged={(e) => setTeam(e)}
+            value={team}
+            validation
+          />
+          <Button>Criar Card</Button>
+        </Form>
+      </div>
     </section>
   );
 };

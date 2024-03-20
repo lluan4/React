@@ -4,6 +4,7 @@ section{
   width: 100%;
 }
 
+
 .form-section {
   background: #F7F7F7;
   width: 80%;
@@ -25,4 +26,5 @@ section{
   align-items: center;
   color: #212121;
   margin-bottom: 44px;
+  margin-top: 33px;
 }

@@ -1,3 +1,3 @@
-import { Form } from "./Form";
+import { FormIndex } from "./Form";
 
-export default Form;
+export default FormIndex;
