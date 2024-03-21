@@ -1,16 +1,15 @@
 import './Dropdown.css';
 import Form from 'react-bootstrap/Form';
 import { controlIdGenerator, firstLetterUpperCase } from '../../Lib/utils';
+import { useState } from 'react';
 
 export const Dropdown = ({ label, itens, className, ...props }) => {
   const { teams } = itens;
-
+  const [value, setValue] = useState('');
   function handleChange(e) {
-    const values = {
-      value: e.currentTarget.value,
-      label: label,
-    };
-    props.inputChanged(values.value);
+    const { value } = e.currentTarget;
+    setValue(value);
+    props.changeValue(value);
   }
 
   return (
@@ -19,8 +18,8 @@ export const Dropdown = ({ label, itens, className, ...props }) => {
       <Form.Select
         onChange={handleChange}
         name={label}
+        value={value}
         size="lg"
-        className={className}
         required
       >
         {teams.map(({ id, value, team }) => (

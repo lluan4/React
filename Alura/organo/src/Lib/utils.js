@@ -53,7 +53,7 @@ export function isEmpty(text) {
  * @return { boolean }
  */
 export function isFirstEmpty(text) {
-  return text[0].trim() === '';
+  return text[0] === ' ';
 }
 
 /**
@@ -64,7 +64,7 @@ export function isFirstEmpty(text) {
  * @return { boolean } - True: Contém números
  */
 export function hasNumber(text) {
-  return /\d/g.test(text);
+  return text && /\d/g.test(text);
 }
 
 /**
@@ -89,4 +89,46 @@ export function getTeams(teamsOptions) {
   });
 
   return teamsRepository;
+}
+
+/**
+ * Compara duas strings
+ *
+ * @param text1 - A primeira cadeia para comparar.
+ * @param text2 - A segunda cadeia para comparar.
+ *
+ * @return { boolean } Verdadeiro se as cordas são iguais falsos caso contrário
+ */
+export function compareStrings(text1, text2) {
+  return text1.toLowerCase() === text2.toLowerCase();
+}
+
+/**
+ * Determina se duas expressões são ou não equivalentes.
+ *
+ * @param { boolean }firstExpression  - A primeira expressão para comparar pode ser nula.
+ * @param { string }logicalOperator - O operador lógico para comparar. (and, or ou xor)
+ * @param { boolean }secondExpression - A segunda expressão para comparar pode ser nula.
+ *
+ * @return { boolean } Verdadeiro se o resultado da operação é equivalente
+ */
+export function expressionResult(
+  firstExpression,
+  logicalOperator,
+  secondExpression
+) {
+  // Retorna verdadeiro se o operador lógico for operador lógico.
+  switch (logicalOperator) {
+    case 'and':
+      return firstExpression && secondExpression;
+    case 'or':
+      return firstExpression || secondExpression;
+    case 'xor':
+      return (
+        (firstExpression && !secondExpression) ||
+        (!firstExpression && secondExpression)
+      );
+    default:
+      return false;
+  }
 }
