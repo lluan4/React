@@ -84,8 +84,20 @@ export function getTeams(teamsOptions) {
   };
   teamsOptions.forEach((team, index) => {
     team === 'Escolha o Time'
-      ? teamsRepository.teams.push({ id: index, value: '', team })
-      : teamsRepository.teams.push({ id: index, value: team, team });
+      ? teamsRepository.teams.push({
+          id: index,
+          value: '',
+          team: team[0],
+          background: team[1],
+          highlight: team[2],
+        })
+      : teamsRepository.teams.push({
+          id: index,
+          value: team[0],
+          team: team[0],
+          background: team[1],
+          highlight: team[2],
+        });
   });
 
   return teamsRepository;
