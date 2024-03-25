@@ -8,6 +8,8 @@
 .card {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
+  width: 262px;
+  height: 272px;
 }
 
 .card-header-content {

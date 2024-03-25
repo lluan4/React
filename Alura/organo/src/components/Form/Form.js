@@ -19,6 +19,10 @@ export const FormIndex = (props) => {
       e.stopPropagation();
     }
     props.toResgisteredCollaborator({ name, role, image, time });
+    setName('');
+    setRole('');
+    setImage('');
+    setTime('');
   };
 
   return (
@@ -26,10 +30,22 @@ export const FormIndex = (props) => {
       <div className="form-section">
         <Form onSubmit={submitHandle}>
           <h2>Preencha os dados para criar o card do colaborador.</h2>
-          <TextField label="Nome" changeValue={(e) => setName(e)} />
-          <TextField label="Cargo" changeValue={(e) => setRole(e)} />
-          <TextField label="Imagem" changeValue={(e) => setImage(e)} />
-          <Dropdown label="Time" changeValue={(e) => setTime(e)} />
+          <TextField
+            label="Nome"
+            value={name}
+            changeValue={(e) => setName(e)}
+          />
+          <TextField
+            label="Cargo"
+            value={role}
+            changeValue={(e) => setRole(e)}
+          />
+          <TextField
+            label="Imagem"
+            value={image}
+            changeValue={(e) => setImage(e)}
+          />
+          <Dropdown label="Time" value={time} changeValue={(e) => setTime(e)} />
           <Button>Criar Card</Button>
         </Form>
       </div>

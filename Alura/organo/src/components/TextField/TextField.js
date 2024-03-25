@@ -7,9 +7,11 @@ import { useState } from 'react';
 export const TextField = ({ label, ...props }) => {
   const [newValue, setNewValue] = useState('');
   const [valid, setValid] = useState(true);
+
   function handleChange(e) {
     const { value } = e.target;
     setNewValue(value);
+    props.changeValue(value);
   }
 
   function setValidations() {
@@ -52,7 +54,7 @@ export const TextField = ({ label, ...props }) => {
         onBlur={setValidations}
         name={label}
         placeholder={getPlaceholderBy(label)}
-        value={newValue}
+        value={props.value}
         size="lg"
         required={!utils.compareStrings(label, 'imagem') ? true : false}
         isInvalid={!valid}

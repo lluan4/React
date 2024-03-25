@@ -11,9 +11,7 @@ function App() {
   const arrayTeams = Object.values(teams);
   const newCollaborator = (collaborator) => {
     setCollaborator([...collaborators, collaborator]);
-    console.log(collaborators);
   };
-
   return (
     <div className="App">
       <Banner />
@@ -30,6 +28,9 @@ function App() {
               name={team.team}
               background={team.background}
               highlight={team.highlight}
+              collaborators={collaborators.filter(
+                (collaborator) => collaborator.time === team.team
+              )}
             />
           );
         }

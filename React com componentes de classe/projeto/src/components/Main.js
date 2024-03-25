@@ -36,7 +36,6 @@ export default class Main extends Component {
     this.setState({
       id: id + 1,
     });
-    console.log(this.state.id);
   };
 
   render() {
