@@ -1,10 +1,25 @@
 import './Dropdown.css';
 import Form from 'react-bootstrap/Form';
-import { controlIdGenerator, firstLetterUpperCase } from '../../Lib/utils';
+import {
+  getTeams,
+  controlIdGenerator,
+  firstLetterUpperCase,
+} from '../../Lib/utils';
 import { useState } from 'react';
 
-export const Dropdown = ({ label, itens, className, ...props }) => {
-  const { teams } = itens;
+export const teamsOptions = [
+  ['Escolha o Time', '', ''],
+  ['Programação', '#D9F7E9', '#57C278'],
+  ['Fron-End', '#E8F8FF', '#82CFFA'],
+  ['Data Science', '#F0F8E2', '#A6D157'],
+  ['Devops', '#FDE7E8', '#E06B69'],
+  ['UX e Design', '#FAE9F5', '#DB6EBF'],
+  ['Mobile', '#FFF5D9', '#FFBA05'],
+  ['Inovação e Gestão', '#FFEEDF', '#FF8A29'],
+];
+
+export const Dropdown = ({ label, ...props }) => {
+  const { teams } = getTeams(teamsOptions);
   const [value, setValue] = useState('');
   function handleChange(e) {
     const { value } = e.currentTarget;
